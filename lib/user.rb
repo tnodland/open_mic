@@ -19,8 +19,9 @@ class User
   end
 
   def joke_by_id(id)
+    jokes_index = id - 1
     jokes.find do |id|
-      id == jokes[0]
+      id == jokes[jokes_index]
     end
   end
 end
