@@ -29,6 +29,10 @@ class OpenMicTest < Minitest::Test
   def test_open_mic_knows_different_location_and_date
     open_mic_2 = OpenMic.new({location: "The Laugh Factory", date: "12-25-18"})
     assert_equal "The Laugh Factory", open_mic_2.location
-    assert_equal "12-25-18", open_mic_2.date 
+    assert_equal "12-25-18", open_mic_2.date
+  end
+
+  def test_open_mic_starts_with_no_performers
+    assert_equal [], @open_mic.performers
   end
 end
