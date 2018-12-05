@@ -13,11 +13,13 @@ class JokeTest < Minitest::Test
     assert_instance_of Joke, @joke
   end
 
-  def test_joke_has_id
+  def test_joke_has_unique_ids
     assert_equal 1, @joke.id
+    assert_equal 2, @new_joke.id
   end
 
-  def test_joke_has_different_id
-    assert_equal 2, @new_joke.id
+  def test_joke_has_unique_setups
+    assert_equal "Why did the strawberry cross the road?", @joke.setup
+    assert_equal "Why did the chicken cross the road?", @new_joke.setup
   end
 end
