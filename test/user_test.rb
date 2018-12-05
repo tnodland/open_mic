@@ -16,10 +16,11 @@ class UserTest < Minitest::Test
   end
 
   def test_user_has_an_empty_array_for_jokes
-    assert_equal [], @sal.jokes 
+    assert_equal [], @sal.jokes
   end
 
   def test_user_can_have_jokes
-    assert_instance_of Joke, @sal.jokes
+    @sal.jokes << @joke
+    assert_instance_of Joke, @sal.jokes[0]
   end
 end
