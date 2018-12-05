@@ -35,4 +35,11 @@ class OpenMicTest < Minitest::Test
   def test_open_mic_starts_with_no_performers
     assert_equal [], @open_mic.performers
   end
+
+  def test_performers_can_be_added
+    @open_mic.welcome(@sal)
+    @open_mic.welcome(@ali)
+    # require 'pry'; binding.pry 
+    assert_instance_of User, @open_mic.performers[0]
+  end
 end
