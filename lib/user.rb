@@ -10,4 +10,7 @@ class User
 
   end
 
+  def learn(joke)
+    jokes << joke 
+  end
 end

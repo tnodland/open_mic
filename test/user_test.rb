@@ -23,4 +23,11 @@ class UserTest < Minitest::Test
     @sal.jokes << @joke
     assert_instance_of Joke, @sal.jokes[0]
   end
+
+  def test_user_can_learn_jokes
+    @sal.learn(@joke)
+    assert_instance_of Joke, @sal.jokes[0]
+    @sal.learn(@new_joke)
+    assert_instance_of Joke, @sal.jokes[1]
+  end
 end
