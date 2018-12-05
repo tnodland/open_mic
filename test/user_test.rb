@@ -9,6 +9,7 @@ class UserTest < Minitest::Test
     @joke = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
     @new_joke = Joke.new(2, "Why did the chicken cross the road?", "I don't know, that's why I was asking you!")
     @sal = User.new("Sal")
+    @ali = User.new("Ali")
   end
 
   def test_user_exists
@@ -29,5 +30,10 @@ class UserTest < Minitest::Test
     assert_instance_of Joke, @sal.jokes[0]
     @sal.learn(@new_joke)
     assert_instance_of Joke, @sal.jokes[1]
+  end
+
+  def test_users_can_tell_jokes
+    @sal.tell(@ali, @joke)
+    assert_instance_of Joke, @ali.jokes[0]
   end
 end
