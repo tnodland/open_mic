@@ -18,5 +18,11 @@ class OpenMicTest < Minitest::Test
     assert_instance_of OpenMic, @open_mic
   end
 
-  def test_open_mic_
+  def test_open_mic_knows_location
+    assert_equal "Comedy Works", @open_mic.location
+  end
+
+  def test_open_mic_knows_date
+    assert_equal "11-20-18", @open_mic.date 
+  end
 end
