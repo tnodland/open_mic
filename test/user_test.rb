@@ -36,4 +36,11 @@ class UserTest < Minitest::Test
     @sal.tell(@ali, @joke)
     assert_instance_of Joke, @ali.jokes[0]
   end
+
+  def test_jokes_array_can_be_sorted_by_id
+    @sal.tell(@ali, @joke)
+    @sal.tell(@ali, @new_joke)
+    assert_equal @ali.joke_by_id(1), @joke
+    assert_equal @ali.joke_by_id(2), @new_joke
+  end
 end

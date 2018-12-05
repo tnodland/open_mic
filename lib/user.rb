@@ -17,4 +17,10 @@ class User
   def tell(user, joke)
     user.learn(joke)
   end
+
+  def joke_by_id(id)
+    jokes.find do |id|
+      id == jokes[0]
+    end
+  end
 end
