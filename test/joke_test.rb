@@ -22,4 +22,9 @@ class JokeTest < Minitest::Test
     assert_equal "Why did the strawberry cross the road?", @joke.setup
     assert_equal "Why did the chicken cross the road?", @new_joke.setup
   end
+
+  def test_joke_has_unique_punchlines
+    assert_equal "Because his mother was in a jam.", @joke.punchline
+    assert_equal "I don't know, that's why I was asking you!", @new_joke.punchline
+  end
 end
