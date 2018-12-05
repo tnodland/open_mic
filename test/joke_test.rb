@@ -13,6 +13,6 @@ class JokeTest < Minitest::Test
   end
 
   def test_joke_has_id
-    assert_equal 1, joke.id
+    assert_equal 1, @joke.id
   end
 end
